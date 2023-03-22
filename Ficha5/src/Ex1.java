@@ -11,13 +11,20 @@ public class Ex1 {
         int[] num = new int[10];
         int counter = 0;
 
-        System.out.println("Digite 10 números");
+        for(counter=0;counter<10;counter++) {
+
+            System.out.println("Digite um número");
+            num[counter] = input.nextInt();
+        }
+
+        counter=0;
 
         while(counter<10) {
 
-            num[counter] = input.nextInt();
+            System.out.println(num[counter]);
             counter++;
         }
+
 
 
 
