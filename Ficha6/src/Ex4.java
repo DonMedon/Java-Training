@@ -1,22 +1,17 @@
 import java.util.Scanner;
 public class Ex4 {
 
-    public static void perfeito(int num) {
-
-        int sum=0;
+    public static boolean perfeito(int num) {
+        int sum = 0;
         for (int i = 1; i < num; i++) {
 
-            if(num%i==0) {
-                sum=sum+i;
+            if (num % i == 0) {
+                sum = sum + i;
             }
-
         }
-        if(num==sum) {
-            System.out.println("The number is perfect");
-        } else {
-            System.out.println("The number is not perfect");
-        }
+        return num == sum;
     }
+
 
     public static void main(String[] args) {
 
@@ -24,7 +19,11 @@ public class Ex4 {
 
         int num;
         System.out.println("Enter a number");
-        num=input.nextInt();
-        perfeito(num);
+        num = input.nextInt();
+        if (perfeito(num)) {
+            System.out.println("The number is perfect");
+        } else {
+            System.out.println("The number is not perfect");
+        }
     }
 }

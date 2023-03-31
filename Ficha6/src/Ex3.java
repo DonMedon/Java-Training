@@ -1,27 +1,15 @@
 import java.util.Scanner;
 public class Ex3 {
 
-    public static void primo(int num) {
-
-        //Implemente uma função que determine se um número (passado por argumento) é ou não primo.
-        boolean p = true;
+    public static boolean primo(int num) {
 
         for (int i = 2; i < num; i++) {
 
-
-
             if (num % i == 0) {
-                p = false;
+                return false;
             }
-
-
         }
-
-        if (p) {
-            System.out.println("O nº é primo");
-        } else {
-            System.out.println("O nº não é primo");
-        }
+        return true;
     }
 
     public static void main(String[] args) {
@@ -31,6 +19,11 @@ public class Ex3 {
         int num;
         System.out.println("Enter a number");
         num=input.nextInt();
-        primo(num);
+
+        if(primo(num)) {
+            System.out.println("O nº é primo");
+        } else {
+            System.out.println("O nº não é primo");
+        }
     }
 }

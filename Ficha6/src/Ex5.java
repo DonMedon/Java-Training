@@ -1,47 +1,33 @@
 import java.util.Scanner;
 public class Ex5 {
 
-    public static void parImpar(int num) {
+    public static boolean parImpar(int num) {
 
         if (num % 2 == 0) {
-            System.out.println(num + " is even");
+            return true;
         } else {
-            System.out.println(num + " is odd");
+            return false;
         }
     }
+    public static boolean pOun(int num) {
 
-    public static void pOun(int num) {
-
-        //Implemente uma função que determine se um número (passado por argumento) é positivo ou negativo.
-
-        if (num < 0) {
-            System.out.println(num + " é negativo");
+        if (num > 0) {
+            return true;
         } else {
-            System.out.println(num + " é positivo");
+            return false;
         }
     }
-
-    public static void primo(int num) {
-
-        //Implemente uma função que determine se um número (passado por argumento) é ou não primo.
-        boolean p = true;
+    public static boolean primo(int num) {
 
         for (int i = 2; i < num; i++) {
 
             if (num % i == 0) {
-                p = false;
+                return false;
             }
         }
-
-        if (p) {
-            System.out.println("O nº é primo");
-        } else {
-            System.out.println("O nº não é primo");
-        }
+        return true;
     }
-
-    public static void perfeito(int num) {
-
+    public static boolean perfeito(int num) {
         int sum = 0;
         for (int i = 1; i < num; i++) {
 
@@ -49,13 +35,8 @@ public class Ex5 {
                 sum = sum + i;
             }
         }
-        if (num == sum) {
-            System.out.println("The number is perfect");
-        } else {
-            System.out.println("The number is not perfect");
-        }
+        return num == sum;
     }
-
     public static void menu() {
 
         /*Implemente  um  programa  que  contenha  uma  função  com  menu  de  opções
@@ -66,7 +47,6 @@ public class Ex5 {
         Scanner input = new Scanner(System.in);
 
         do {
-
             System.out.println("Escolha um número:");
             num = input.nextInt();
             do {
@@ -87,33 +67,42 @@ public class Ex5 {
 
             switch (opcao) {
                 case 1:
-                    parImpar(num);
+                    if(parImpar(num))
+                        System.out.println("O nº é par");
+                    else
+                        System.out.println("O nº é impar");
                     break;
 
                 case 2:
-                    pOun(num);
+                    if (pOun(num))
+                        System.out.println("O nº é positivo");
+                    else
+                        System.out.println("O nº é negativo");
                     break;
 
                 case 3:
-                    primo(num);
+                    if(primo(num))
+                        System.out.println("O nº é primo");
+                    else
+                        System.out.println("O nº não é primo");
                     break;
 
                 case 4:
-                    perfeito(num);
+                    if (perfeito(num))
+                        System.out.println("O nº é perfeito");
+                    else
+                        System.out.println("O nº não é perfeito");
                     break;
-
             }
         }
-
         while (opcao != 4);
-
-
     }
-
     public static void main(String[] args) {
 
         menu();
+
+        }
     }
-}
+
 
 
