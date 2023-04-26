@@ -1,6 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.PrintWriter;
+import java.util.Objects;
 import java.util.Scanner;
 
 /*1.Imprima o seu conteúdo na consola.
@@ -37,7 +37,7 @@ public class trabalho {
         //Declarar varável "line"
         String line;
         //Varável "nº de linhas" e contador para o ciclo
-        int salesNumber = 0, i = 0;
+        int salesNumber = 0;
         double totalSales = 0, eachSale = 0;
 
         readFile.nextLine();
@@ -67,7 +67,6 @@ public class trabalho {
         //Declarar varável "line"
         String line;
         //Varável "nº de linhas" e contador para o ciclo
-        int i = 0;
         double totalProfit = 0, totalSales = 0;
 
         readFile.nextLine();
@@ -95,7 +94,6 @@ public class trabalho {
         //Declarar varável "line"
         String line, name = "", contact = "", email = "";
         //Varável "nº de linhas" e contador para o ciclo
-        int i = 0;
 
         readFile.nextLine();
 
@@ -109,8 +107,6 @@ public class trabalho {
                 name = (itemsOfTheLine[2]);
                 contact = (itemsOfTheLine[3]);
                 email = (itemsOfTheLine[4]);
-
-
             }
         }
 
@@ -122,8 +118,109 @@ public class trabalho {
 
     }
 
+    public static void GameEditor(String pathFile, String editor) throws FileNotFoundException {
+
+        //Abrir o ficheiro
+        File file = new File(pathFile);
+        //Ler o ficheiro
+        Scanner readFile = new Scanner(file);
+
+        //Declarar varável "line"
+        String line, category = "", game = "";
+        int games = 0;
+        String[] arrayGames = new String[120];
+        boolean gamesSearch = false;
+
+        //Ciclo para ler o ficheiro e contar o número total de linhas
+        while (readFile.hasNextLine()) {
+
+            line = readFile.nextLine();
+            String[] itemsOfTheLine = line.split(";");
+            if ((itemsOfTheLine[5]).equals(editor)) {
+
+                category = (itemsOfTheLine[6]);
+                game = (itemsOfTheLine[7]);
+
+                for (int j = 0; j < games; j++) {
+
+                    if (arrayGames[j].equals(game)) {
+
+                        gamesSearch = true;
+
+                    }
+                }
+            }
+            if (!gamesSearch) {
+                arrayGames[games] = game;
+                //Imprimir o nome, contacto e e-mail que corresponde a um certo ID
+                System.out.println("Category: " + category);
+                System.out.println("Game: " + game);
+                games++;
+            }
 
 
+        }
+        readFile.close();
+    }
+
+    public static void menu() throws FileNotFoundException {
+
+        Scanner input = new Scanner(System.in);
+        int opcao;
+        String op = null;
+
+        do {
+            do {
+                System.out.println("Seleccione uma das opções");
+                System.out.println("Prima 1 para imprimir conteúdo do ficheiro na consola");
+                System.out.println("Prima 2 para imprimir quantas vendas foram executadas e o seu valor total");
+                System.out.println("Prima 3 para saber o total de lucro da GameStart");
+                System.out.println("Prima 4 para imprimir todas as informações de um dado cliente da GameStart");
+                System.out.println("Prima 5 para imprimir todos os géneros e respetivos jogos de uma dada Editora");
+                System.out.println("Prima 6 para imprimir o jogo mais caro e os clientes que o compraram");
+
+                opcao = input.nextInt();
+
+            } while (opcao < 1 || opcao > 6);
+
+            switch (opcao) {
+
+                case 1:
+                    printFile("GameStart.csv");
+                    break;
+                case 2:
+                    totalSales("GameStart.csv");
+                    break;
+                case 3:
+                    totalProfit("GameStart.csv");
+                    break;
+                case 4:
+                    Scanner inputID = new Scanner(System.in);
+                    int clientID;
+                    System.out.println("Choose an ID");
+                    clientID = inputID.nextInt();
+
+                    clientInfo("GameStart.csv", clientID);
+
+
+                    break;
+                case 5:
+                    Scanner inputED = new Scanner(System.in);
+                    String editor;
+                    System.out.println("Choose an editor");
+                    editor = inputED.next();
+
+                    GameEditor("GameStart.csv", editor);
+                    break;
+                case 6:
+                    break;
+            }
+            System.out.println("Deseja efetuar mais alguma operação?");
+            op = input.next();
+            op = op.toUpperCase();
+
+        } while(op.equals("S"));
+    }
 
 
         /*Criar matriz com todas as linhas e colunas
@@ -167,13 +264,8 @@ public class trabalho {
 
     public static void main(String[] args) {
 
-        Scanner input = new Scanner(System.in);
-        int clientID;
-        System.out.println("Choose an ID");
-        clientID = input.nextInt();
-
         try {
-            clientInfo("GameStart.csv", clientID);
+            menu();
         } catch (FileNotFoundException exc) {
             System.out.println("Can't read file!");
         }
