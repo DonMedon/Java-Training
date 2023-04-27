@@ -141,7 +141,11 @@ public class trabalho {
                 category = (itemsOfTheLine[6]);
                 game = (itemsOfTheLine[7]);
 
-                for (int j = 0; j < games; j++) {
+                //Imprimir o nome, contacto e e-mail que corresponde a um certo ID
+                System.out.println("Category: " + category);
+                System.out.println("Game: " + game);
+
+               /* for (int j = 0; j < games; j++) {
 
                     if (arrayGames[j].equals(game)) {
 
@@ -156,11 +160,15 @@ public class trabalho {
                 System.out.println("Category: " + category);
                 System.out.println("Game: " + game);
                 games++;
-            }
+            } */
 
+
+            }
 
         }
         readFile.close();
+
+
     }
 
     public static void menu() throws FileNotFoundException {
