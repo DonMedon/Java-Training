@@ -1,7 +1,8 @@
 import java.util.Scanner;
 
-public class Ex1 {
+public class Ex_01 {
     public static void main(String[] args) {
+
         Scanner input= new Scanner(System.in);
 
         // Declarar variáveis
@@ -17,7 +18,7 @@ public class Ex1 {
 
         // Imprimir as informações da primeira pessoa
         System.out.println("Nome da primeira pessoa: " + vitor.getNome());
-        System.out.println("Idade da primeira pessoa: " + vitor.getIdade());
+        System.out.println("Idade da primeira pessoa: " +vitor.getIdade());
         System.out.println("Altura da primeira pessoa: " + vitor.getAltura());
 
         // Imprimir enter *para ficar bonito*

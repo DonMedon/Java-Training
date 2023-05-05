@@ -223,7 +223,7 @@ public class trabalho {
                 ele vai imprimir o primeiro cliente que encontrar mais os clientes que também compraram esse jogo.*/
             } else if (value == maxValue) {
 
-                clients += itemsOfTheLine[2];
+                clients += " and " + itemsOfTheLine[2];
             }
         }
 
