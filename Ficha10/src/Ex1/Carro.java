@@ -1,3 +1,5 @@
+package Ex1;
+
 public class Carro {
 
     private String marca, modelo;
@@ -72,6 +74,11 @@ public class Carro {
         }
     }
 
+    public void exibirDetalhes() {
+        System.out.println("Marca: "+ this.marca);
+        System.out.println("Modelo: "+ this.modelo);
+    }
+
     public Carro corrida(Carro adversario) {
 
         if (this.potencia > adversario.potencia) {
@@ -88,14 +95,22 @@ public class Carro {
                     return this;
                 } else if (this.anoFabrico < adversario.anoFabrico) {
                     return adversario;
-                } else {
-                    System.out.println("Deu empate!");
                 }
             }
         }
         return null;
 
     }
+
+    public double calcularConsumo(double km) {
+
+        return km*consumo/100;
+
+    }
+
+
+
+
 }
 
 
