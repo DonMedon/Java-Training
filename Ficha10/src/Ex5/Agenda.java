@@ -16,10 +16,14 @@ public class Agenda {
         this.pessoas.add(pessoaNova);
     }
     public void exibirDetalhes() {
-        System.out.println("Nome: ");
-        System.out.println(this.nome);
-        System.out.println("Idade: ");
-        System.out.println(this.idade);
+        for (int i = 0; i < pessoas.size() ; i++) {
+            System.out.println("Nome: ");
+            System.out.println(pessoas.get(i).getNome());
+            System.out.println("Idade: ");
+            System.out.println(pessoas.get(i).getIdade());
+        }
+
+
     }
 
 }
