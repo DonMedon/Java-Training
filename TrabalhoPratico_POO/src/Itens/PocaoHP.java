@@ -12,6 +12,10 @@ public class PocaoHP extends ItemHeroi {
         this.cura = cura;
     }
 
+    public int getCura() {
+        return cura;
+    }
+
     @Override
     public void mostrarDetalhes() {
         System.out.println("-------------------------------------");

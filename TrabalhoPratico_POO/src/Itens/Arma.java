@@ -13,6 +13,10 @@ public class Arma extends ItemHeroi{
         this.dano = dano;
     }
 
+    public int getDano() {
+        return dano;
+    }
+
     @Override
     public void mostrarDetalhes() {
         System.out.println("------------------------------------");
