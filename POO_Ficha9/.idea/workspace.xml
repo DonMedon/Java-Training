@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1a9971b8-0214-4ee5-a616-6cb9f7e0af14" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Ex4.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/circulo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ex3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ex3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Retangulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Retangulo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../trabalho_pratico/out/production/trabalho_pratico/trabalho.class" beforeDir="false" afterPath="$PROJECT_DIR$/../trabalho_pratico/out/production/trabalho_pratico/trabalho.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../trabalho_pratico/src/trabalho.java" beforeDir="false" afterPath="$PROJECT_DIR$/../trabalho_pratico/src/trabalho.java" afterDir="false" />
-    </list>
+    <list default="true" id="1a9971b8-0214-4ee5-a616-6cb9f7e0af14" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,6 +51,7 @@
       <workItem from="1682674040685" duration="8204000" />
       <workItem from="1682712284010" duration="7000" />
       <workItem from="1683207253779" duration="1726000" />
+      <workItem from="1684844943452" duration="13000" />
     </task>
     <servers />
   </component>
