@@ -20,6 +20,14 @@ abstract public class Entidade {
         return forca;
     }
 
+    public void setHp(int hp) {
+        this.hp = hp;
+    }
+
+    public void setForca(int forca) {
+        this.forca = forca;
+    }
+
     abstract public void mostrarDetalhes();
 }
 
