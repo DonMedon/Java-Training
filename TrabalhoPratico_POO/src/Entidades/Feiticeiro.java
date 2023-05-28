@@ -7,8 +7,8 @@ import java.util.ArrayList;
 
 public class Feiticeiro extends Heroi {
 
-    public Feiticeiro(String nome, int hp, int forca, int nivel, int ouro, Arma arma, ArrayList<PocaoHP> pocoes) {
-        super(nome, hp, forca, nivel, ouro, arma, pocoes);
+    public Feiticeiro(String nome, int hp, int forca, int nivel, int ouro) {
+        super(nome, hp, forca, nivel, ouro);
     }
 
     @Override
@@ -57,7 +57,7 @@ public class Feiticeiro extends Heroi {
 
     @Override
     public void mostrarDetalhes() {
-        System.out.println("------------------------------------");
+        System.out.println("---------------------------------------------------------------------------");
         System.out.println("Nome: " + getNome());
         System.out.println("HP: " + getHp());
         System.out.println("Força " + getForca());
@@ -67,7 +67,7 @@ public class Feiticeiro extends Heroi {
         for(PocaoHP pocoes : this.getPocoes()) {
             System.out.println("Poções: " + pocoes.getNome());
         }
-        System.out.println("------------------------------------");
+        System.out.println("------------------------------------------------------------------------------");
     }
 }
 

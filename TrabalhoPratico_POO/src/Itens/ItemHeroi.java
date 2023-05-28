@@ -7,9 +7,9 @@ import java.util.ArrayList;
 abstract public class ItemHeroi {
     private String nome;
     int preco;
-    private ArrayList<Heroi> tipoHeroi;
+    private ArrayList<TipoHeroi> tipoHeroi;
 
-    public ItemHeroi(String nome, int preco, ArrayList<Heroi> tipoHeroi) {
+    public ItemHeroi(String nome, int preco, ArrayList<TipoHeroi> tipoHeroi) {
         this.nome = nome;
         this.preco = preco;
         this.tipoHeroi = tipoHeroi;
@@ -23,7 +23,7 @@ abstract public class ItemHeroi {
         return preco;
     }
 
-    public ArrayList<Heroi> getTipoHeroi() {
+    public ArrayList<TipoHeroi> getTipoHeroi() {
         return tipoHeroi;
     }
 
