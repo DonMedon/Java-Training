@@ -39,7 +39,7 @@ public class Feiticeiro extends Heroi {
             System.out.println("-----------------------------------------------------------------------------");
             System.out.println("O herói " + this.getNome() + " venceu a batalha!");
             setNivel(this.getNivel() + 1);
-            System.out.println("Subiu de nível para " + this.getNivel());
+            System.out.println("Subiu para nível " + this.getNivel());
             setHp(this.getHp() + 10);
             System.out.println("Aumentou 10 pontos de vida e passou a ter " + this.getHp() + " de HP.");
             setForca(this.getForca() + 1);
@@ -63,7 +63,11 @@ public class Feiticeiro extends Heroi {
         System.out.println("Força " + getForca());
         System.out.println("Nível: " + getNivel());
         System.out.println("Ouro: " + getOuro());
-        System.out.println("Arma: " + getArma().getNome());
+        if (this.getArma() == null) {
+            System.out.println("Arma: Não possui arma.");
+        } else {
+            System.out.println("Arma: " + getArma().getNome());
+        }
         for(PocaoHP pocoes : this.getPocoes()) {
             System.out.println("Poções: " + pocoes.getNome());
         }

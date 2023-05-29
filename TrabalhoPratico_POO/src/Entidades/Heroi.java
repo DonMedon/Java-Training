@@ -1,8 +1,6 @@
 package Entidades;
 
-import Entidades.Entidade;
 import Itens.Arma;
-import Itens.ItemHeroi;
 import Itens.PocaoHP;
 
 import java.util.ArrayList;
@@ -17,6 +15,7 @@ public abstract class Heroi extends Entidade {
         super(nome, hp, forca);
         this.nivel = nivel;
         this.ouro = ouro;
+        this.pocoes = new ArrayList<>();
     }
 
     public int getNivel() {
@@ -56,20 +55,27 @@ public abstract class Heroi extends Entidade {
     public void usarPocao() {
 
         Scanner input = new Scanner(System.in);
-        String option;
+        int i=0;
 
-        for(PocaoHP pocao : this.pocoes) {
-            System.out.println(this.pocoes);
-            System.out.println("---------------------------------------");
-            System.out.println("Qual a poção que deseja utilizar?");
-            option = input.next();
-            if (option.equals(pocao.getNome())) {
-                setHp(getHp() + pocao.getCura());
-                System.out.println("O herói consumiu a poção " + pocao.getNome() + " que lhe curou " + pocao.getCura() + " de vida.");
-                System.out.println("O heróis tem agora " + this.getHp() + " de vida");
-            } else {
-                System.out.println("O herói não tem essa poção!");
-            }
+        for(PocaoHP pocao : this.getPocoes()) {
+            System.out.println("Poções do herói: " + i + " - " + pocao.getNome());
+            System.out.println("Vida: " + pocao.getCura());
+            i++;
+
         }
+            System.out.println("---------------------------------------------------------------------");
+            System.out.println("Qual a poção que deseja utilizar?");
+            int option = input.nextInt();
+
+            System.out.println("O herói consumiu a poção " + getPocoes().get(option).getNome() + " que lhe curou " + getPocoes().get(option).getCura() + " de vida.");
+            this.setHp(this.getHp() + getPocoes().get(option).getCura());
+            System.out.println("O herói tem agora " + this.getHp() + " de vida");
+
+            getPocoes().remove(option);
+            i--;
+
+            for (PocaoHP pocao : this.getPocoes()) {
+                System.out.println("Poções: " + i) ;
+            }
     }
 }

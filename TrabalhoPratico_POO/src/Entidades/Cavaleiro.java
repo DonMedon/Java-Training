@@ -15,16 +15,16 @@ public class Cavaleiro extends Heroi {
     public void atacar(NPC vilao) {
         while ((vilao.getHp() > 0 && this.getHp() > 0)) {
             System.out.println("-----------------------------------------------------------------------------");
-            System.out.println("O vilão " + vilao.getHp() + " ataca!");
+            System.out.println("O vilão " + vilao.getNome() + " ataca!");
             setHp((int) (this.getHp() - (vilao.getForca() * 0.8)));
 
             if (this.getHp() > 0) {
                 System.out.println("O herói " + this.getNome() + " ficou com " + this.getHp() + " de vida.");
-                System.out.println("O herói " + this.getHp() + " ataca!");
+                System.out.println("O herói " + this.getNome() + " ataca!");
                 vilao.setHp((vilao.getHp()) - (this.getForca() + getArma().getDano()));
 
                 if (vilao.getHp() > 0) {
-                    System.out.println("O vilão " + vilao.getHp() + " tem agora " + vilao.getHp() + " de vida.");
+                    System.out.println("O vilão " + vilao.getNome() + " tem agora " + vilao.getHp() + " de vida.");
                     System.out.println("-----------------------------------------------------------------------------");
                 } else {
                     System.out.println("O vilão " + vilao.getNome() + " ficou sem vida.");
@@ -39,7 +39,7 @@ public class Cavaleiro extends Heroi {
             System.out.println("-----------------------------------------------------------------------------");
             System.out.println("O herói " + this.getNome() + " venceu a batalha!");
             setNivel(this.getNivel() + 1);
-            System.out.println("Subiu de nível para " + this.getNivel());
+            System.out.println("Subiu para nível " + this.getNivel());
             setHp(this.getHp() + 10);
             System.out.println("Aumentou 10 pontos de vida e passou a ter " + this.getHp() + " de HP.");
             setForca(this.getForca() + 1);
@@ -63,7 +63,11 @@ public class Cavaleiro extends Heroi {
         System.out.println("Força " + getForca());
         System.out.println("Nível: " + getNivel());
         System.out.println("Ouro: " + getOuro());
-        System.out.println("Arma: " + getArma().getNome());
+        if (this.getArma() == null) {
+            System.out.println("Arma: Não possui arma.");
+        } else {
+            System.out.println("Arma: " + getArma().getNome());
+        }
         for(PocaoHP pocoes : this.getPocoes()) {
             System.out.println("Poções: " + pocoes.getNome());
         }

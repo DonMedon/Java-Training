@@ -16,14 +16,18 @@ public class PocaoHP extends ItemHeroi {
         return cura;
     }
 
+    public void setCura(int cura) {
+        this.cura = cura;
+    }
+
     @Override
     public void mostrarDetalhes() {
-        System.out.println("-------------------------------------");
+        System.out.println();
         System.out.println("Nome da poção: " + getNome());
         System.out.println("Preço da poção: " + getPreco());
         System.out.println("Tipo de Herói: " + getTipoHeroi());
         System.out.println("HP curado: " + this.cura);
-        System.out.println("-------------------------------------");
+        System.out.println("------------------------------------------------------------------------------");
     }
 }
 

@@ -19,11 +19,11 @@ public class Arma extends ItemHeroi{
 
     @Override
     public void mostrarDetalhes() {
-        System.out.println("------------------------------------");
+        System.out.println();
         System.out.println("Nome da arma: " + getNome());
         System.out.println("Preço da arma: " + getPreco());
         System.out.println("Tipo de Herói: " + getTipoHeroi());
         System.out.println("Dano da arma: " + this.dano);
-        System.out.println("------------------------------------");
+        System.out.println("-------------------------------------------------------------------------------");
     }
 }
