@@ -1,8 +1,6 @@
 package Ex2;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.util.Scanner;
 
 public class Logger {
@@ -20,11 +18,11 @@ public class Logger {
         }
         return instance;
     }
-    public void log(String log_line) throws FileNotFoundException {
+    public void log(String log_line) throws IOException {
 
-    PrintWriter log_writer = new PrintWriter(this.file);
+    FileWriter log_writer = new FileWriter(this.file,true);
 
-    log_writer.println(log_line);
+    log_writer.write(log_line);
     log_writer.close();
 
 
