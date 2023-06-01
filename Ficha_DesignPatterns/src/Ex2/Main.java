@@ -12,6 +12,7 @@ public class Main {
         try {
             logger.log("Mensagem 1");
             logger.log("Mensagem 2");
+
         } catch (IOException exc) {
             System.out.println("Erro no ficheiro...");
         }

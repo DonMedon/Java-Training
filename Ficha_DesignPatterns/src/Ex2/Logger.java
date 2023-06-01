@@ -22,7 +22,7 @@ public class Logger {
 
     FileWriter log_writer = new FileWriter(this.file,true);
 
-    log_writer.write(log_line);
+    log_writer.write(log_line + "\n");
     log_writer.close();
 
 

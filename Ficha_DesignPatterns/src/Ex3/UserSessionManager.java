@@ -1,13 +1,19 @@
 package Ex3;
 
+import java.util.Random;
+
 public class UserSessionManager {
 
     private static UserSessionManager instance;
     private long lastAccess;
-    private String sessionToken;
+    private Random sessionToken;
 
-    private UserSessionManager() {
+    public UserSessionManager() {
+        this.sessionToken = new Random();
+        this.lastAccess = System.currentTimeMillis();
+
     }
+
     public static synchronized UserSessionManager getInstance() {
         if (instance == null) {
             instance = new UserSessionManager();
@@ -17,7 +23,7 @@ public class UserSessionManager {
         public long getLastAccess () {
             return lastAccess;
         }
-        public String getSessionToken () {
+        public Random getSessionToken () {
             return sessionToken;
         }
         public void setLastAccess (long lastAccess){
