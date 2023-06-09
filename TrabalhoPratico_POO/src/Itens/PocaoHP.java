@@ -23,7 +23,7 @@ public class PocaoHP extends ItemHeroi {
     @Override
     public void mostrarDetalhes() {
         System.out.println();
-        System.out.println("Nome da poção: " + getNome());
+        System.out.println("Poção: " + getNome());
         System.out.println("Preço da poção: " + getPreco());
         System.out.println("Tipo de Herói: " + getTipoHeroi());
         System.out.println("HP curado: " + this.cura);

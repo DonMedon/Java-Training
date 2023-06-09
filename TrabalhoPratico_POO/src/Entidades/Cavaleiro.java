@@ -10,7 +10,6 @@ public class Cavaleiro extends Heroi {
     public Cavaleiro(String nome, int hp, int forca, int nivel, int ouro) {
         super(nome, hp, forca, nivel, ouro);
     }
-
     @Override
     public void atacar(NPC vilao) {
         while ((vilao.getHp() > 0 && this.getHp() > 0)) {
@@ -19,9 +18,13 @@ public class Cavaleiro extends Heroi {
             setHp((int) (this.getHp() - (vilao.getForca() * 0.8)));
 
             if (this.getHp() > 0) {
-                System.out.println("O herói " + this.getNome() + " ficou com " + this.getHp() + " de vida.");
-                System.out.println("O herói " + this.getNome() + " ataca!");
-                vilao.setHp((vilao.getHp()) - (this.getForca() + getArma().getDano()));
+                System.out.println(this.getNome() + " ficou com " + this.getHp() + " de vida.");
+                System.out.println(this.getNome() + " ataca!");
+                if (this.getArma() == null) {
+                    vilao.setHp((vilao.getHp() - (this.getForca())));
+                } else {
+                    vilao.setHp((vilao.getHp()) - (this.getForca() + getArma().getDano()));
+                }
 
                 if (vilao.getHp() > 0) {
                     System.out.println("O vilão " + vilao.getNome() + " tem agora " + vilao.getHp() + " de vida.");
@@ -31,26 +34,25 @@ public class Cavaleiro extends Heroi {
                     System.out.println("-----------------------------------------------------------------------------");
                 }
             } else {
-                System.out.println("O herói " + this.getNome() + " ficou sem vida.");
+                System.out.println(this.getNome() + " ficou sem vida.");
                 System.out.println("-----------------------------------------------------------------------------");
             }
         }
         if (this.getHp() > 0) {
             System.out.println("-----------------------------------------------------------------------------");
-            System.out.println("O herói " + this.getNome() + " venceu a batalha!");
+            System.out.println(this.getNome() + " VENCEU A BATALHA!");
+            System.out.println("-----------------------------------------------------------------------------");
             setNivel(this.getNivel() + 1);
-            System.out.println("Subiu para nível " + this.getNivel());
-            setHp(this.getHp() + 10);
-            System.out.println("Aumentou 10 pontos de vida e passou a ter " + this.getHp() + " de HP.");
+            System.out.println("Subiste para nível " + this.getNivel());
             setForca(this.getForca() + 1);
-            System.out.println("Aumentou 1 ponto de força e passou a ter " + this.getForca() + " de força.");
+            System.out.println("Aumentaste 1 ponto de força e passaste a ter " + this.getForca() + " de força.");
             setOuro(this.getOuro() + 10);
-            System.out.println("Aumentou 10 moedas de ouro ao seu saldo e passou a ter " + this.getOuro() + " de ouro.");
+            System.out.println("Aumentaste 10 moedas de ouro ao teu saldo e passaste a ter " + this.getOuro() + " de ouro.");
             System.out.println("-----------------------------------------------------------------------------");
         } else {
             System.out.println("-----------------------------------------------------------------------------");
-            System.out.println("O herói " + this.getNome() + " perdeu.");
-            System.out.println("Venceu o vilão " + vilao.getNome() + "!");
+            System.out.println(this.getNome() + " perdeu.");
+            System.out.println("O vilão " + vilao.getNome() + " venceu!");
             System.out.println("-----------------------------------------------------------------------------");
         }
     }
@@ -64,13 +66,18 @@ public class Cavaleiro extends Heroi {
         System.out.println("Nível: " + getNivel());
         System.out.println("Ouro: " + getOuro());
         if (this.getArma() == null) {
-            System.out.println("Arma: Não possui arma.");
+            System.out.println("Arma: Não tens arma.");
         } else {
             System.out.println("Arma: " + getArma().getNome());
         }
-        for(PocaoHP pocoes : this.getPocoes()) {
-            System.out.println("Poções: " + pocoes.getNome());
+        if (this.getPocoes() == null) {
+            System.out.println("Poções: Não tens poções.");
+        } else {
+            for(PocaoHP pocoes : this.getPocoes()) {
+                System.out.println("Poções: " + pocoes.getNome());
+            }
+            System.out.println("---------------------------------------------------------------------------------");
         }
-        System.out.println("---------------------------------------------------------------------------------");
+
     }
 }
