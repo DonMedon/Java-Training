@@ -1,7 +1,7 @@
 package org.example.ex8;
 
 import java.util.ArrayList;
-import java.util.List;
+
 public class ShoppingCart {
     private ArrayList<String> items;
     private String codCliente;
@@ -9,11 +9,11 @@ public class ShoppingCart {
         this.codCliente=codCliente;
         this.items = new ArrayList<>();
     }
-    public void addItem(String item) {
-        items.add(item);
+    public boolean addItem(String item) {
+        return items.add(item);
     }
-    public void removeItem(String item) {
-        items.remove(item);
+    public boolean removeItem(String item) {
+        return items.remove(item);
     }
     public boolean containsItem(String item) {
         return items.contains(item);
@@ -21,7 +21,9 @@ public class ShoppingCart {
     public int getItemCount() {
         return items.size();
     }
-    public void clearCart() {
+    public boolean clearCart() {
         items.clear();
+        return true;
+
     }
 }
