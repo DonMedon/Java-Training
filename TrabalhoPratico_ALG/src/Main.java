@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
 
@@ -32,7 +31,7 @@ public class Main {
                 cl = nDias * 25;
                 break;
 
-        case "D":
+            case "D":
                 System.out.println("Quarto Duplo");
                 rt = nDias * 250;
                 cl = nDias * 30;
