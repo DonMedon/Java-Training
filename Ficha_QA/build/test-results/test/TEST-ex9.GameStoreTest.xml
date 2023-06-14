@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ex9.GameStoreTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-06-14T16:01:09" hostname="DESKTOP-AIO8RDI" time="0.011">
+  <properties/>
+  <testcase name="testCalcularLucro()" classname="ex9.GameStoreTest" time="0.011"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

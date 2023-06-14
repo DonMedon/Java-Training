@@ -4,8 +4,7 @@ import org.example.ex8.ShoppingCart;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ShoppingCartTest {
 
@@ -30,6 +29,7 @@ public class ShoppingCartTest {
     public void testContainsItem() {
         carrinho.addItem("Twix");
         assertTrue(carrinho.containsItem("Twix"));
+        assertFalse(carrinho.containsItem("Kit-Kat"));
     }
     @Test
     public void testItemCount() {
@@ -40,7 +40,10 @@ public class ShoppingCartTest {
     }
     @Test
     public void testClearCart() {
+
+        carrinho.addItem("Twix");
         assertTrue(carrinho.clearCart());
+        assertEquals(0, carrinho.getItemCount());
     }
 }
 
